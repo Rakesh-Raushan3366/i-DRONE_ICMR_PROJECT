@@ -1,0 +1,52 @@
+{% load static %}
+{% block content %}
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding-top: 0rem; /* Adjust this as needed */
+    }
+</style>
+
+
+<!-- Footer Start -->
+<div class="container-fluid footer bg-dark wow fadeIn" data-wow-delay=".3s">
+	<div class="container pt-5 pb-4">
+		<div class="row">
+			<div class="col-md-6 text-center text-md-start">
+				<span class="text-light"><a class="text-secondary" href="#"><i
+						class="fas fa-copyright text-secondary me-2"></i>www.idrone.gov.in</a>, All right reserved.</span>
+			</div>
+			<div class="col-md-6 text-center text-md-end">
+				<span class="text-light">Designed By &nbsp;<a class="text-secondary" href="https://main.icmr.nic.in/">ICMR Hqrs, New Delhi </a></span>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a class="btn btn-secondary btn-square rounded-circle back-to-top" href="#"><i
+		class="fa fa-arrow-up text-white"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'assets/lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'assets/lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'assets/lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'assets/lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+{% endblock content %}

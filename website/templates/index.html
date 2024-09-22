@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+{% load static %}{% load custom_filters %}
+
+{% block content %}
+    {% include "navbar.html" %}
+
+    <head>
+        <title>{% block title %}Home{% endblock %}</title>
+    </head>
+
+
+    <style>
+        .carousel-item img {
+        max-height: 600px;
+        width: 100%;
+        object-fit: cover;
+        }
+        .twitter-img {
+            max-width: 100px;
+            max-height: 100px;
+            width: auto;
+            height: auto;
+        }
+    </style>
+    <body>
+
+        <!-- Carousel Start -->
+        <div class="container-fluid px-0">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    {% for slide in carousel %}
+                    <li data-bs-target="#carouselId" data-bs-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+                    {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                    {% for slide in carousel %}
+                    <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                        <img src="{{ slide.Carousel_pics.url }}" class="d-block w-100 img-fluid" alt="{{ slide.Title }}">
+                        <div class="carousel-caption d-flex h-100 align-items-center justify-content-center">
+                            <div class="container text-center">
+                                <h6 class="text-secondary h4 animated fadeInUp">{{ slide.Title }}</h6>
+                                <h6 class="text-white display-5 mb-4 animated fadeInLeft">{{ slide.Heading }}</h6>
+                                <p class="mb-4 text-white fs-5 animated fadeInDown">{{ slide.Description|safe }}</p>
+                                <a href="{% url 'about' %}" class="me-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn1 animated fadeInLeft">Explore More</button></a>
+                                <a href="{% url 'contact' %}" class="ms-2"><button type="button" class="px-4 py-sm-3 px-sm-5 btn btn-primary rounded-pill carousel-content-btn2 animated fadeInRight">Contact Us</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Previous and Next buttons -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+        <!-- Fact Start -->
+		<div class="container-fluid bg-secondary py-4">
+			<div class="container">
+				<div class="row">
+                    {% for data in statistic %}
+					<div class="col-lg-3 wow fadeIn" data-wow-delay=".{{ forloop.counter0 }}s">
+						<div class="d-flex justify-content-center text-align-center">
+							<h1 class="me-3 text-primary data-value"  data-value="{{ data.value|numeric_value }}">{{ data.value|numeric_value  }}</h1>
+							<h5 class="text-white mt-1">{{ data.name }}</h5>
+						</div>
+					</div>
+                    {% endfor %}
+				</div>                
+			</div>
+		</div>
+		<!-- Fact End -->
+
+        <!-- About Start -->
+        <div class="container-fluid py-5 my-5">
+            <div class="container pt-5">
+                <div class="row g-5">
+                    {% for about in about_us %}
+                    <div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+                        <div class="h-100 position-relative">
+                            <img src="{{ about.Background_Image.url }}" class="img-fluid w-75 rounded" alt="" style="margin-bottom: 25%;">
+                            <div class="position-absolute w-75" style="top: 25%; left: 25%;">
+                                <img src="{{ about.Front_Image.url }}" class="img-fluid w-100 rounded" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+                        <h5 class="text-primary">{{about.Title}}</h5>
+                        <h4 class="mb-4">{{about.Heading}}</h4>
+                        <p>{{ about.Description | safe | truncatechars_html:700 }}</p>
+                        <a href="{% url 'about' %}" class="btn btn-secondary rounded-pill px-5 py-3 text-white">More Details</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+        <!-- Twitter Start -->
+        <div class="container-fluid testimonial py-5 mb-5">
+            <div class="container">
+                <div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+                    <h4>Notable Mentions</h4>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeIn" data-wow-delay=".5s">
+                    {% for tweets in twitter %}
+                    <div class="testimonial-item border p-4">
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <img src="{{ tweets.img.url }}" alt="{{ tweets.name }}" class="twitter-img">
+                            </div>
+                            <div class="ms-4">
+                                <h4 class="text-secondary">{{ tweets.name }}</h4>
+                                <p class="m-0 pb-3">{{ tweets.designation }}</p>
+                                <div class="social-links">
+                                    <!-- Twitter Link -->
+                                    {% if tweets.link %}
+                                    <a href="{{ tweets.link }}" target="_blank" onclick="return confirm('You are about to proceed to an external website. Click OK to proceed.')" title="Twitter">
+                                        <i class="fab fa-twitter text-info"></i>&nbsp;&nbsp;
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-top mt-4 pt-3">
+                            <p class="mb-0">{{ tweets.description|safe }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Twitter End -->
+
+        <!-- Footer start -->
+        {% include "footer.html" %}
+        <!-- Footer End -->
+
+    </body>
+
+    <script>
+        new WOW().init();
+
+        $(document).ready(function(){
+            $('.data-value').each(function() {
+                var $this = $(this),
+                    countTo = parseInt($this.attr('data-value'));
+
+                $({ countNum: 0 }).animate({
+                    countNum: countTo
+                },
+                {
+                    duration: 2000,
+                    easing: 'linear',
+                    step: function() {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $this.text($this.attr('data-value'));
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "navbar.html" %}
+
+    <head>
+        <title>{% block title %}Study_Details{% endblock %}</title>
+    </head>
+
+<body>
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header">
+        <div class="container text-center py-5">
+            <h1 class="display-2 text-white mb-4 animated slideInDown">Study Detail</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li aria-current="page" class="breadcrumb-item">study detail</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Start Description -->
+    <div class="container-fluid py-5 my-5 wow fadeIn" data-wow-delay="0.3s">
+        <div class="container text-center">
+            <div class="row g-3">
+                {% for Study in stu %}
+                <div class="col-lg-12">
+                    <div class="card shadow-lg border-4 rounded-lg mb-4">
+                        <div class="card-body">
+                            <i class="bi bi-book display-1 text-primary"></i>
+                            <h3 class="display-6">{{Study.Title}}</h3>
+                            <p class="mb-4">{{Study.Description|safe}}</p>
+                            {% comment %} <p class="mb-4">We’re sorry, the page you have looked for does not exist in our website! Maybe go to our home page or try to use a search?</p> {% endcomment %}
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="{% url 'main_gallery' Study.study_id %}">Explore More</a>
+                        </div>
+                    </div>  
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- End Description -->
+
+    <!-- Footer Start -->
+    {% include "footer.html" %}
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-secondary btn-square rounded-circle back-to-top"><i class="fa fa-arrow-up text-white"></i></a>
+
+    <!-- Add any necessary JS files here, including links to JS files -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+{% endblock %}

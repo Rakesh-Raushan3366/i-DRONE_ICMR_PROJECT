@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include "navbar.html" %}
+
+<head>
+	<title>{% block title %}About_us{% endblock %}</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header">
+	<div class="container text-center py-5">
+		<h1 class="display-2 text-white mb-4 animated slideInDown">Contactus</h1>
+		<nav aria-label="breadcrumb animated slideInDown">
+			<ol class="breadcrumb justify-content-center mb-0">
+				<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+				<li aria-current="page" class="breadcrumb-item"><a href="/contact">Contact</a></li>
+			</ol>
+		</nav>
+	</div>
+</div>
+<!-- Page Header End -->
+
+<!-- Contact Start -->
+<div class="container-fluid">
+	<div class="container py-5">
+		<div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px;">
+			<h5 class="text-primary">Get In Touch</h5>
+			<h1 class="mb-3">Contact for any query</h1>
+			<p class="mb-2">Feel free to reach out to us if you have any questions, feedback, or inquiries. Our team is
+				here to assist you!</p>
+		</div>
+		<div class="contact-detail position-relative p-5">
+			<div class="row g-5 mb-5 justify-content-center">
+				<div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".3s">
+					<div class="d-flex bg-light p-3 rounded">
+						<div class="flex-shrink-0 btn-square bg-secondary rounded-circle"
+						     style="width: 64px; height: 64px;">
+							<i class="fas fa-map-marker-alt text-white"></i>
+						</div>
+						<div class="ms-3">
+							<h4 class="text-primary">Address</h4>
+							<a class="h6" href="https://maps.app.goo.gl/dT4xTdvis75ge6Qf6" target="_blank">V.
+								Ramalingaswami Bhawan, P.O. Box No. 4911
+								Ansari Nagar, New Delhi - 110029, India</a>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".5s">
+					<div class="d-flex bg-light p-3 rounded">
+						<div class="flex-shrink-0 btn-square bg-secondary rounded-circle"
+						     style="width: 64px; height: 64px;">
+							<i class="fa fa-phone text-white"></i>
+						</div>
+						<div class="ms-3">
+							<h4 class="text-primary">Call Us</h4>
+							<a class="h5" href="tel:+0123456789" target="_blank">+91-11-26588895</a>
+							<a class="h5" href="tel:+0123456789" target="_blank">+91-11-26588980</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-4 col-lg-6 wow fadeIn" data-wow-delay=".7s">
+					<div class="d-flex bg-light p-3 rounded">
+						<div class="flex-shrink-0 btn-square bg-secondary rounded-circle"
+						     style="width: 64px; height: 64px;">
+							<i class="fa fa-envelope text-white"></i>
+						</div>
+						<div class="ms-3">
+							<h4 class="text-primary">Email Us</h4>
+							<a class="h5" href="mailto:info@example.com" target="_blank">drsumiticmr@gmail.com</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row g-5">
+				<div class="col-lg-6 wow fadeIn" data-wow-delay=".3s">
+					<div class="p-5 h-100 rounded contact-map">
+						<iframe allowfullscreen=""
+						        class="rounded w-100 h-100"
+						        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+						        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d224258.60806158284!2d77.214318!3d28.568539000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcfbba37bf655472a!2sV%20Ramalingaswami%20Bhawan!5e0!3m2!1sen!2sin!4v1615270841306!5m2!1sen!2sin"
+						        style="border:0;"></iframe>
+					</div>
+				</div>
+				<div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
+
+					<form action="" method="post">
+						{% csrf_token %}
+
+						<div class="p-5 rounded contact-form">
+							{% if error_messages %}
+							<div class="alert alert-danger alert-dismissible fade show" role="alert">
+								{% for message in error_messages %}
+								{{ message }}
+								<br>
+								{% endfor %}
+								<button aria-label="Close" class="btn-close" data-bs-dismiss="alert"
+								        type="button"></button>
+							</div>
+							{% endif %}
+
+							<div class="mb-4">
+								<input class="form-control border-0 py-3" name="name" placeholder="Full Name"
+								       required type="text" value="{{ name }}">
+							</div>
+							<div class="mb-4">
+								<input class="form-control border-0 py-3" name="email" placeholder="Email-Address"
+								       required type="email" value="{{ email }}">
+							</div>
+							<div class="mb-4">
+								<input class="form-control border-0 py-3" maxlength="15" minlength="5" name="phone"
+								       placeholder="Phone" required type="number" value="{{ phone }}">
+							</div>
+							<div class="mb-4">
+								<textarea class="w-100 form-control border-0 py-3" cols="10" name="message"
+								          placeholder="Message"
+								          required rows="6">{{ message }}</textarea>
+							</div>
+							<div class="text-start text-center">
+								<button class="btn bg-primary text-white py-3 px-5" type="submit">Send Message</button>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Contact End -->
+
+
+{% include "footer.html" %}
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		// Check if there are success messages to display
+		{% if messages %}
+			let success = false;
+			{% for message in messages %}
+				{% if message.tags == "success" %}
+					success = true;
+				{% endif %}
+			{% endfor %}
+			if (success) {
+				Swal.fire({
+					title: 'Success!',
+					text: 'Thank You for Contacting Us! We have received your message and will get back to you as soon as possible.',
+					icon: 'success',
+					confirmButtonText: 'OK'
+				});
+			}
+		{% endif %}
+	});
+</script>
+
+{% endblock %}

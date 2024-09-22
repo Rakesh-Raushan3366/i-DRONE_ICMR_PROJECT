@@ -1,0 +1,424 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include "navbar.html" %}
+
+<head>
+	<title>{% block title %}Institute Videos{% endblock %}</title>
+</head>
+
+<body>
+<!-- Page Header Start -->
+<div class="container-fluid page-header">
+	<div class="container text-center py-5">
+		<h1 class="display-2 text-white mb-4 animated slideInDown">Gallery</h1>
+		<nav aria-label="breadcrumb animated slideInDown">
+			<ol class="breadcrumb justify-content-center mb-0">
+				<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+				<li aria-current="page" class="breadcrumb-item">Videos</li>
+			</ol>
+		</nav>
+	</div>
+</div>
+<!-- Page Header End -->
+
+<!-- Gallery Start -->
+<div class="container-fluid project my-5">
+	<div class="container py-5">
+		<div class="text-center mx-auto pb-5 wow fadeIn" data-wow-delay=".3s" style="max-width: 600px">
+			<!-- <h5 class="text-primary">Our Videos</h5>-->
+		</div>
+		<div class="row g-5">
+			{% for data in vid %}
+			{% if data.video %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_02 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_02.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_02.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_03 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_03.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_03.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_04 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_04.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_04.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_05 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_05.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_05.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_06 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_06.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_06.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_07 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_07.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_07.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_08 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_08.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_08.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_09 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_09.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_09.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_10 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_10.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_10.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_11 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_11.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_11.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_12 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_12.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_12.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_13 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_13.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_13.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_14 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_14.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_14.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_15 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_15.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_15.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_16 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_16.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_16.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_17 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_17.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_17.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_18 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_18.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_18.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_19 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_19.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_19.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.video_20 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<video autoplay class="img-fluid w-100 rounded" controls muted>
+							<source src="{{ data.video_20.url }}" type="video/mp4">
+							Your browser does not support the video tag.
+						</video>
+						<div class="project-content">
+							<a class="text-center" href="{{ data.video_20.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Inst_fullname }}</h4>
+								<p class="m-0 text-white">{{ data.Description|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+	</div>
+</div>
+<!-- Gallery End -->
+
+{% include "footer.html" %}
+
+</body>
+
+{% endblock %}

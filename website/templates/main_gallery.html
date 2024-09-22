@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% include "navbar.html" %}
+
+    <head>
+        <title>{% block title %}Main Gallery{% endblock %}</title>
+    </head>
+
+    <body>
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header">
+        <div class="container text-center py-5">
+            <h1 class="display-2 text-white mb-4 animated slideInDown">Gallery</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li aria-current="page" class="breadcrumb-item">Gallery</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Gallery Start -->
+    <div class="container-fluid project my-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                    <div class="bg-light shadow-lg rounded">
+                        <div class="p-4 text-center services-content">
+                            <a href="{% url 'institute_news' study_id %}">
+                                <div class="services-content-icon">
+                                    <i class="fa fa-envelope-open fa-7x mb-4 text-primary"></i>
+                                    <h4 class="mb-3">News</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                    <div class="bg-light shadow-lg rounded">
+                        <div class="p-4 text-center services-content">
+                            <a href="{% url 'gallery' study_id %}">
+                                <div class="services-content-icon">
+                                    <i class="fa fa-image fa-7x mb-4 text-warning"></i>
+                                    <h4 class="mb-3">Pictures</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+                    <div class="bg-light shadow-lg rounded">
+                        <div class="p-4 text-center services-content">
+                            <a href="{% url 'video' study_id %}">
+                                <div class="services-content-icon">
+                                    <i class="fa fa-video fa-7x mb-4 text-info"></i>
+                                    <h4 class="mb-3">Videos</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery End -->
+
+    {% include "footer.html" %}
+
+    </body>
+
+{% endblock %}

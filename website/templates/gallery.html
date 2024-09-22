@@ -1,0 +1,838 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include "navbar.html" %}
+
+<head>
+	<title>{% block title %}Institute Gallery{% endblock %}</title>
+</head>
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header">
+	<div class="container text-center py-5">
+		<h1 class="display-2 text-white mb-4 animated slideInDown">Gallery</h1>
+		<nav aria-label="breadcrumb animated slideInDown">
+			<ol class="breadcrumb justify-content-center mb-0">
+				<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+				<li aria-current="page" class="breadcrumb-item">Gallery</li>
+			</ol>
+		</nav>
+	</div>
+</div>
+<!-- Page Header End -->
+
+<!-- Gallery Start -->
+<div class="container-fluid project my-5">
+	<div class="container py-5">
+		<div class="row g-5">
+			{% for data in galleries %}
+			{% if data.Image %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.Image.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.Image.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_02 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_02.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_02.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_02 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_02|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_03 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_03.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_03.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_03 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_03|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_04 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_04.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_04.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_04 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_04|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_05 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_05.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_05.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_05 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_05|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_06 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_06.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_06.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_06 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_06|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_07 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_07.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_07.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_07 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_07|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_08 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_08.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_08.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_08 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_08|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_09 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_09.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_09.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_09 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_09|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_10 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_10.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_10.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_10 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_10|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_11 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_11.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_11.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_11 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_11|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_12 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_12.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_12.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_12 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_12|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_13 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_13.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_13.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_13 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_13|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_14 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_14.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_14.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_14 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_14|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_15 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_15.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_15.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_15 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_15|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_16 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_16.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_16.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_16 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_16|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_17 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_17.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_17.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_17 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_17|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_18 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_18.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_18.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_18 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_18|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_19 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_19.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_19.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_19 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_19|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_20 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_20.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_20.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_20 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_20|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_21 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_21.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_21.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_21 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_21|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_22 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_22.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_22.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_22 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_22|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_23 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_23.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_23.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_23 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_23|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_24 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_24.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_24.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_24 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_24|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_25 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_25.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_25.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_25 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_25|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_26 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_26.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_26.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_26 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_26|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_27 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_27.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_27.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_27 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_27|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_28 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_28.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_28.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_28 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_28|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_29 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_29.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_29.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_29 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_29|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_30 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_30.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_30.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_30 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_30|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_31 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_31.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_31.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_31 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_31|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_32 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_32.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_32.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_32 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_32|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_33 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_33.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_33.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_33 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_33|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_34 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_34.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_34.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_34 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_34|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_35 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_35.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_35.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_35 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_35|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_36 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_36.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_36.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_36 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_36|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_37 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_37.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_37.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_37 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_37|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_38 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_38.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_38.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_38 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_38|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_39 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_39.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_39.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_39 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_39|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_40 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_40.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_40.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_40 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_40|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_41 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_41.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_41.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_41 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_41|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_42 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_42.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_42.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_42 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_42|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_43 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_43.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_43.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_43 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_43|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_44 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_44.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_44.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_44 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_44|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_45 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_45.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_45.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_45 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_45|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_46 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_46.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_46.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_46 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_46|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_47 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_47.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_47.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_47 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_47|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_48 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_48.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_48.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_48 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_48|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_49 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_49.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_49.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_49 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_49|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+			{% if data.img_50 %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".3s">
+				<div class="project-item">
+					<div class="project-img">
+						<img alt="idrone image" class="img-fluid w-100 rounded" src="{{ data.img_50.url }}"/>
+						<div class="project-content">
+							<a class="text-center project-link" href="{{ data.img_50.url }}" target="_blank">
+								<h4 class="text-secondary">{{ data.Heading_50 }}</h4>
+								<p class="m-0 text-white">{{ data.Paragraph_50|safe }}</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- Gallery End -->
+
+
+{% include "footer.html" %}
+{% endblock %}

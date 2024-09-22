@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include "navbar.html" %}
+
+<head>
+	<title>{% block title %}Team{% endblock %}</title>
+
+	<style>
+		.team-img {
+			width: 90%;
+			height: auto;
+			border-radius: 50%;
+		}
+	</style>
+</head>
+
+
+<body>
+<!-- Page Header Start -->
+<div class="container-fluid page-header">
+	<div class="container text-center py-5">
+		<h1 class="display-2 text-white mb-4 animated slideInDown">Our Team</h1>
+		<nav aria-label="breadcrumb animated slideInDown">
+			<ol class="breadcrumb justify-content-center mb-0">
+				<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+				<li aria-current="page" class="breadcrumb-item">Our Team</li>
+			</ol>
+		</nav>
+	</div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Team Start -->
+<div class="container-fluid project my-5">
+	<div class="container">
+		<!--Team 1 -->
+		<div class="row g-5 justify-content-center">
+			{% for team in team_member %}
+			<div class="col-md-3">
+				<img alt="{{ team.Name }}" class="img-fluid w-100 rounded-circle" src="{{ team.Image.url }}">
+				<div class="team-name text-center py-3">
+					<h4>{{ team.Name }}</h4>
+					<p class="m-0">{{ team.Designation }}</p>
+					<small><span class="m-0">{{ team.Description|safe }}</span></small>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+		<!-- ICMR i-DRONE Team 2 -->
+		<div class="row g-5 py-5 justify-content-center">
+			{% for team in idrone_team %}
+			<div class="col-md-3">
+				<img alt="{{ team.Name }}" class="img-fluid w-100 rounded-circle team-img" src="{{ team.Image.url }}">
+				<div class="team-name text-center py-3">
+					<h4>{{ team.Name }}</h4>
+					<p class="m-0">{{ team.Designation }}</p>
+					<small><span class="m-0">{{ team.Description|safe }}</span></small>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+		<!-- Research and Technical Team 4 -->
+		<div class="text-center mx-auto wow fadeIn" data-wow-delay=".3s" style="max-width: 600px">
+			<h6 class="text-center">Research and Technical</h6>
+		</div>
+		<div class="row g-5 py-5 justify-content-center">
+			{% for team in research_team %}
+			<div class="col-md-3">
+				<img alt="{{ team.Name }}" class="img-fluid w-60 rounded-circle team-img" src="{{ team.Image.url }}">
+				<div class="team-name text-center py-3">
+					<h4>{{ team.Name }}</h4>
+					<p class="m-0">{{ team.Designation }}</p>
+					<small><span class="m-0">{{ team.Description|safe }}</span></small>
+
+					<div class="social-links">
+						<!-- LinkedIn Link -->
+						{% if team.Linkdin_link %}
+						<a href="{{ team.Linkdin_link }}" onclick="return confirm('You are about to proceed to an external website. Click OK to proceed.')"
+						   target="_blank"
+						   title="LinkedIn">
+							<i class="fab fa-linkedin-in text-primary"></i>&nbsp;&nbsp;
+						</a>
+						{% endif %}
+						<!-- Email Link -->
+						{% if team.Email_link %}
+						<a href="mailto:{{ team.Email_link }}" onclick="return confirm('You are about to proceed to an external website. Click OK to proceed.')"
+						   target="_blank"
+						   title="Email">
+							<i class="fas fa-envelope text-primary"></i>
+						</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<!-- Adminstartion, Procurement and IT Support Team 3 -->
+		<div class="text-center mx-auto wow fadeIn" data-wow-delay=".3s" style="max-width: 600px">
+			<h6 class="text-center">Adminstartion, Procurement, Policy - Communications and IT Support</h6>
+		</div>
+		<div class="row g-5 py-5 justify-content-center">
+			{% for team in admin_team %}
+			<div class="col-md-3">
+				<div class="text-center">
+					<img alt="{{ team.Name }}" class="img-fluid rounded-circle team-img" src="{{ team.Image.url }}">
+				</div>
+
+				<div class="team-name text-center py-3">
+					<h4>{{ team.Name }}</h4>
+					<p class="m-0">{{ team.Designation }}</p>
+					<small>{{ team.Description|safe }}</small>
+
+					<div class="social-links mt-2">
+						<!-- LinkedIn Link -->
+						{% if team.Linkdin_link %}
+						<a href="{{ team.Linkdin_link }}" onclick="return confirm('Proceed to LinkedIn profile?')" rel="noopener noreferrer" target="_blank"
+						   title="LinkedIn">
+							<i class="fab fa-linkedin-in text-primary"></i>
+						</a>
+						{% endif %}
+						<!-- Email Link -->
+						{% if team.Email_link %}
+						<a href="mailto:{{ team.Email_link }}" onclick="return confirm('Send email to {{ team.Name }}?')" rel="noopener noreferrer" target="_blank"
+						   title="Email">
+							<i class="fas fa-envelope text-primary"></i>
+						</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- Team End -->
+
+{% include "footer.html" %}
+
+</body>
+
+{% endblock %}

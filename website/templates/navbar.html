@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Spinner Start -->
+<div class="show position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+     id="spinner">
+	<div class="spinner-grow text-primary" role="status"></div>
+</div>
+
+<!-- Topbar Start -->
+<div class="container-fluid bg-dark py-2 d-none d-md-flex">
+	<div class="container">
+		<div class="d-flex justify-content-between topbar">
+			<div class="top-info text-white-50">
+				<small class="me-3 text-white"><a href="{% url 'contact' %}"><i
+						class="fas fa-map-marker-alt me-2 text-secondary"></i></a>Ansari Nagar, New Delhi</small>
+				<small class="me-3 text-white"><a href="{% url 'contact' %}"><i
+						class="fas fa-mobile me-2 text-secondary"></i></a>+91-11-26588895</small>
+				<small class="me-3 text-white"><a href="{% url 'contact' %}"><i
+						class="fas fa-envelope me-2 text-secondary"></i></a>drsumiticmr@gmail.com</small>
+			</div>
+
+			<!-- Example placeholder for translated text -->
+			<div align="center" id="google_translate_element"></div>
+
+			<div class="top-link">
+				<a class="bg-light nav-fill btn btn-sm-square rounded-circle" href="https://www.facebook.com/ICMROrganisation"
+				   onclick="if(!confirm('You are about to proceed to an external website. Click OK to proceed.')){ return false; }"
+				   target="_blank"><i
+						class="fab fa-facebook-f text-primary"></i></a>
+				<a class="bg-light nav-fill btn btn-sm-square rounded-circle"
+				   href="https://twitter.com/ICMRDELHI"
+				   onclick="if(!confirm('You are about to proceed to an external website. Click OK to proceed.')){ return false; }" target="_blank" title="twitter"><i
+						class="fab fa-twitter text-primary"></i></a>
+				<a class="bg-light nav-fill btn btn-sm-square rounded-circle"
+				   href="https://www.youtube.com/c/icmrorganisation"
+				   onclick="if(!confirm('You are about to proceed to an external website. Click OK to proceed.')){ return false; }" target="_blank" title="Youtube"><i
+						class="fab fa-youtube text-primary"></i></a>
+				<a class="bg-light nav-fill btn btn-sm-square rounded-circle"
+				   href="https://www.instagram.com/icmrorganisation/"
+				   onclick="if(!confirm('You are about to proceed to an external website. Click OK to proceed.')){ return false; }" target="_blank" title="instagram"><i
+						class="fab fa-instagram text-primary"></i></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Topbar End -->
+
+<!-- Site Logo -->
+<div class="container">
+	<div class="logo"><a href="{% url 'home' %}"><img alt="i-drone" data-logo-height="35"
+	                                                  src="{% static 'assets/img/logo.png' %}"></a></div>
+</div>
+<!-- End Site Logo -->
+
+<!-- Announcement Section Start -->
+<div class="container-fluid">
+	<div class="container">
+		<div class="row g-5 justify-content-center">
+			<div class="col-8">
+				<article class="notice">
+					<span><marquee style="color:orange; font-weight:bold;">ICMR's i-DRONE Initiative: Transforming Healthcare Delivery in Remote Areas of India.</marquee></span>
+				</article>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Announcement Section End -->
+
+<!-- Navbar Start -->
+<div class="container-fluid bg-primary">
+	<div class="container">
+		<nav class="navbar navbar-dark navbar-expand-lg py-0">
+
+			<!-- Navbar Toggler Button -->
+			<button class="navbar-toggler me-0" data-bs-target="#navbarCollapse" data-bs-toggle="collapse"
+			        type="button">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- Navbar Items -->
+			<div class="collapse navbar-collapse bg-transparent" id="navbarCollapse">
+				<div class="navbar-nav ms-auto mx-xl-auto p-0">
+					<a class="nav-item nav-link active text-secondary" href="{% url 'home' %}">Home</a>
+					<a class="nav-item nav-link" href="{% url 'about' %}">About Us</a>
+
+					<div class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/">Activities</a>
+						<div class="dropdown-menu rounded">
+							<a class="dropdown-item" href="{% url 'study_complete' %}">Completed</a>
+							<a class="dropdown-item" href="{% url 'study_ongoing' %}">Ongoing</a>
+						</div>
+					</div>
+					<a class="nav-item nav-link" href="{% url 'team' %}">Team</a>
+					<a class="nav-item nav-link" href="{% url 'study' %}">Gallery</a>
+					<a class="nav-item nav-link" href="{% url 'document' %}">Document</a>
+					<a class="nav-item nav-link" href="{% url 'contact' %}">Contact</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+</div>
+
+{% endblock %}

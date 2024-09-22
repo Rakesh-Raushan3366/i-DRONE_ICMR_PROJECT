@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include "navbar.html" %}
+
+<head>
+	<title>{% block title %}About_us{% endblock %}</title>
+</head>
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header">
+	<div class="container text-center py-5">
+		<h1 class="display-2 text-white mb-4 animated slideInDown">About us</h1>
+		<nav aria-label="breadcrumb animated slideInDown">
+			<ol class="breadcrumb justify-content-center mb-0">
+				<li class="breadcrumb-item"><a href="/">Home</a></li>
+				<li aria-current="page" class="breadcrumb-item">About</li>
+			</ol>
+		</nav>
+	</div>
+</div>
+<!-- Page Header End -->
+
+<!-- About Start -->
+<div class="container-fluid py-5 my-5">
+	<div class="container py-5">
+		<div class="row g-5">
+			{% for about in about_us %}
+			<div class="col-lg-5 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".3s">
+				<div class="h-100 position-relative">
+					<img alt="" class="img-fluid w-75 rounded" src="{{ about.Background_Image.url }}"
+					     style="margin-bottom: 25%;">
+					<div class="position-absolute w-75" style="top: 25%; left: 25%;">
+						<img alt="" class="img-fluid w-100 rounded" src="{{ about.Front_Image.url }}">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-7 col-md-6 col-sm-12 wow fadeIn" data-wow-delay=".5s">
+				<h5 class="text-primary">{{about.Title}}</h5>
+				<h4 class="mb-4">{{about.Heading}}</h4>
+				<p>{{about.Description|safe}}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<!-- About End -->
+
+<!-- Footer start -->
+{% include "footer.html" %}
+<!-- Footer End -->
+
+{% endblock %}

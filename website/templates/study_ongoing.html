@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include "navbar.html" %}
+
+<head>
+	<title>{% block title %}Ongoing{% endblock %}</title>
+</head>
+
+<body>
+
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header">
+	<div class="container text-center py-5">
+		<h1 class="display-2 text-white mb-4 animated slideInDown">Ongoing Activites</h1>
+		<nav aria-label="breadcrumb animated slideInDown">
+			<ol class="breadcrumb justify-content-center mb-0">
+				<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+				<li aria-current="page" class="breadcrumb-item">Ongoing</li>
+			</ol>
+		</nav>
+	</div>
+</div>
+<!-- Page Header End -->
+
+<!-- Gallery Start -->
+<div class="container-fluid project my-5">
+	<div class="container py-5">
+		<div class="row g-3">
+			{% for Study in stu %}
+			<div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay=".5s">
+				<div class="bg-info shadow-lg rounded-pill">
+					<div class="p-4 text-center services-content">
+						<div class="services-content-icon">
+							<i class="fa fa-book fa-4x mb-4 text-primary"></i>
+							<h4 class="mb-3">{{Study.Title}}</h4>
+							<p>{{Study.Description|safe}}</p>
+							<a class="btn btn-secondary text-white px-5 py-3 rounded-pill"
+							   href="{% url 'phasedes' Study.pk %}">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+</div>
+<!-- Gallery End -->
+
+{% include "footer.html" %}
+</body>
+
+{% endblock %}
